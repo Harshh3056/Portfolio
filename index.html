@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 🤖 Harsh | Python Developer</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Montserrat:wght@800;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+</head>
+<body style="overflow: hidden;"> <div id="loader">
+        <div class="loader-content">
+            <h1 class="welcome-text">WELCOME</h1>
+            <div class="underline"></div>
+        </div>
+    </div>
+
+    <div class="cursor-glow"></div>
+
+    <nav>
+        <div class="logo">HARSH</div>
+        <ul>
+            <li><a href="#about-me">About Me</a></li> 
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="theme-switcher-item">
+                <div class="theme-inline-menu">
+                    <div class="theme-dot" style="background: #8b5cf6;" onclick="setTheme('#8b5cf6', '#06b6d4')"></div>
+                    <div class="theme-dot" style="background: #ff0055;" onclick="setTheme('#ff0055', '#ffaa00')"></div>
+                    <div class="theme-dot" style="background: #00ff88;" onclick="setTheme('#00ff88', '#0066ff')"></div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <header id="about">
+        <div class="hero reveal">
+            <div class="profile-container">
+                <img src="my.png" alt="Harsh" class="profile-img">
+            </div>
+            <h1>Hi, I'm <span class="highlight">Harsh</span></h1>
+            <p>A Creative Full Stack Developer specializing in building scalable web applications</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </header>
+
+    <section id="about-me" class="about-section reveal">
+        <div class="container">
+            <div class="about-flex">
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <center>
+                    <p>I am dedicated Full Stack Developer based in Ahmedabad, India. I have a strong foundation in Python and Django, specializing in building scalable, secure, and efficient web applications. With a Bachelor of Engineering in Computer Science , I bridge the gap between complex backend logic and user-friendly frontend design.</p>
+                    <p>I am proficient in developing RESTful APIs, managing database integrations (SQL and MongoDB), and implementing secure authentication systems. My experience ranges from creating fully functional E-Commerce platforms with payment integrations to managing complex inventory systems. I am passionate about clean code, debugging, and performance optimization to deliver robust digital solutions.</p>
+                    </center>
+                    <div class="about-skills">
+                        <div class="skill-card">
+                            <h3>Core Expertise</h3>
+                            <ul>
+                                <li><span>✔</span> Modern UI/UX Design</li>
+                                <li><span>✔</span> Full Stack Web Applications</li>
+                                <li><span>✔</span> Responsive Web Development</li>
+                                <li><span>✔</span> Performance Optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="reveal">
+        <div class="container">
+            <div class="skills-header">
+                <h2 class="glitch-font">Expertise <span class="amp">&</span> Stack</h2>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card-fancy" style="--accent: #06b6d4;">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <span class="card-num">01</span>
+                        <h3 class="display-font">Frontend</h3>
+                        <p class="card-desc">Crafting pixel-perfect, responsive interfaces with a focus on user experience.</p>
+                        <div class="skill-tags">
+                            <span class="tag">REACT.JS</span>
+                            <span class="tag">JAVASCRIPT</span>
+                            <span class="tag">HTML5_CSS3</span>
+                            <span class="tag">MORDEN_UI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-card-fancy" style="--accent: #a855f7;">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <span class="card-num">02</span>
+                        <h3 class="display-font">Backend</h3>
+                        <p class="card-desc">Building robust server-side logic and scalable RESTful architectures.</p>
+                        <div class="skill-tags">
+                            <span class="tag">python_django</span>
+                            <span class="tag">node.js</span>
+                            <span class="tag">rest_apis</span>
+                            <span class="tag">jwt_auth</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-card-fancy" style="--accent: #10b981;">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <span class="card-num">03</span>
+                        <h3 class="display-font">Systems</h3>
+                        <p class="card-desc">Managing complex data schemas and high-performance server environments.</p>
+                        <div class="skill-tags">
+                            <span class="tag">mysql_sql</span>
+                            <span class="tag">mongodb</span>
+                            <span class="tag">xampp_server</span>
+                            <span class="tag">deployment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="projects" class="reveal">
+        <div class="container">
+            <div class="projects-header">
+                <h2 class="glitch-font">Featured <span class="amp">&</span> Projects</h2>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card-fancy" style="--accent: #ff0055;">
+                    <div class="card-glow"></div>
+                    <div class="project-content">
+                        <div class="project-image-placeholder">
+                             <span class="project-category">DJANGO FULLSTACK</span>
+                        </div>
+                        <h3 class="display-font">E-Commerce</h3>
+                        <p class="card-desc">A complete shop with Razorpay integration, OTP security, and coupon systems. Live on PythonAnywhere.</p>
+                        <div class="project-tags">
+                            <span class="tag">python</span>
+                            <span class="tag">django</span>
+                            <span class="tag">razorpay_api</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://harsh3056.pythonanywhere.com" target="_blank" class="btn-mini">Live Demo</a>
+                            <a href="#" class="btn-mini-outline">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card-fancy" style="--accent: #00ff88;">
+                    <div class="card-glow"></div>
+                    <div class="project-content">
+                        <div class="project-image-placeholder">
+                             <span class="project-category">SYSTEM DESIGN</span>
+                        </div>
+                        <h3 class="display-font">Blood Bank Management Systems</h3>
+                        <p class="card-desc">Automated blood donation and distribution process with donor tracking and inventory management.</p>
+                        <div class="project-tags">
+                            <span class="tag">php_sql</span>
+                            <span class="tag">xampp</span>
+                            <span class="tag">inventory_mgmt</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn-mini">View Details</a>
+                            <a href="#" class="btn-mini-outline">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <section id="contact" class="reveal">
+    <div class="contact-container">
+        <p class="sub-heading" style="text-align: center; color: var(--primary); font-weight: 700; letter-spacing: 2px;">GET IN TOUCH</p>
+        <h2 style="text-align: center;">Let's Create Something Great</h2>
+        
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p>I'm currently available for freelance work or full-time positions. If you have a project that needs some creative injection, let’s chat.</p>
+                
+                <div class="info-links">
+                    <a href="mailto:harsh30563056@gmail.com" class="info-item">
+                        <span class="icon">✉</span>
+                        harsh30563056@gmail.com
+                    </a>
+                    <div class="info-item">
+                        <span class="icon">📍</span>
+                        Ahmedabad, Gujarat, India
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-cta">
+                <div class="social-grid">
+                    <a href="https://www.linkedin.com/in/harsh-makwana-a38bab35b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="social-box linkedin">
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/Harshh3056" target="_blank" class="social-box github">
+                        <span>GitHub</span>
+                    </a>
+                </div>
+                <a href="mailto:harsh30563056@gmail.com" class="btn email-btn">Send me an Email</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="mini-footer">
+    <p>&copy; 2026 Harsh Built with Django & Passion.</p>
+</footer>
+
+    <script>
+        // 1. Loader & Page Scroll Lock
+        window.addEventListener("load", () => {
+            const loader = document.querySelector("#loader");
+            setTimeout(() => {
+                loader.classList.add("loader-hidden");
+                document.body.style.overflow = "auto";
+            }, 2000);
+        });
+
+        // 2. Theme Switcher Logic
+        function setTheme(primary, secondary) {
+            const root = document.documentElement;
+            root.style.setProperty('--primary', primary);
+            root.style.setProperty('--secondary', secondary);
+            root.style.setProperty('--gradient', `linear-gradient(135deg, ${primary} 0%, ${secondary} 100%)`);
+            
+            localStorage.setItem('userThemePrimary', primary);
+            localStorage.setItem('userThemeSecondary', secondary);
+        }
+
+        const p = localStorage.getItem('userThemePrimary');
+        const s = localStorage.getItem('userThemeSecondary');
+        if (p && s) setTheme(p, s);
+
+        // 3. Cursor Glow Logic
+        const glow = document.querySelector('.cursor-glow');
+        let curX = -500, curY = -500, tgX = 0, tgY = 0;
+
+        window.addEventListener('mousemove', (e) => {
+            tgX = e.clientX;
+            tgY = e.clientY;
+        });
+
+        function moveCursor() {
+            curX += (tgX - curX) * 0.1;
+            curY += (tgY - curY) * 0.1;
+            glow.style.left = curX + 'px';
+            glow.style.top = curY + 'px';
+            requestAnimationFrame(moveCursor);
+        }
+        moveCursor();
+
+        // 4. Scroll Reveal (Fade-in) Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach((section) => {
+            observer.observe(section);
+        });
+
+        // 5. Smooth Scroll Manual Adjust (to fix sticky header offset)
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                const offset = 80; // height of nav
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            });
+        });
+        document.querySelectorAll('.skill-card-fancy').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--x', `${x}px`);
+                card.style.setProperty('--y', `${y}px`);
+            });
+        });
+        // Add .project-card-fancy to the mousemove listener
+        document.querySelectorAll('.skill-card-fancy, .project-card-fancy').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--x', `${x}px`);
+                card.style.setProperty('--y', `${y}px`);
+            });
+        });
+    </script>
+</body>
+</html>

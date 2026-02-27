@@ -1,0 +1,825 @@
+:root {
+    /* Backgrounds */
+    --bg-deep: #050505;        
+    --bg-surface: #121212;     
+    
+    /* Accents */
+    --primary: #8b5cf6;        /* Vivid Violet */
+    --secondary: #06b6d4;      /* Electric Cyan */
+    --gradient: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+    
+    /* Text */
+    --text-main: #ffffff;
+    --text-dim: #94a3b8;       
+    --glass: rgba(255, 255, 255, 0.03);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-deep);
+    color: var(--text-main);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Better font for the Logo and Nav links */
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+nav a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Bold Style for Main Titles (About/Hero, Projects, Contact) */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px; /* Tighter spacing for a modern look */
+}
+
+h1 {
+    font-size: clamp(3rem, 10vw, 5rem); /* Extra large for the hero */
+}
+
+h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    text-align: center;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* High-readability style for descriptions */
+header p, .card p, footer p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    max-width: 700px;
+    line-height: 1.8;
+}
+
+/* Project Card Titles */
+.card h3 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 0px;
+}
+/* --- WELCOME LOADER --- */
+#loader {
+    position: fixed;
+    inset: 0;
+    background: var(--bg-deep);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease-out, visibility 0.8s;
+}
+
+.welcome-text {
+    font-size: clamp(2rem, 8vw, 4rem);
+    letter-spacing: 12px;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    animation: reveal 1.5s ease-in-out infinite alternate;
+}
+
+.underline {
+    height: 4px;
+    background: var(--gradient);
+    width: 0;
+    margin: 10px auto 0;
+    border-radius: 10px;
+    animation: stretch 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes reveal {
+    from { opacity: 0.4; transform: scale(0.95); filter: blur(2px); }
+    to { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+
+@keyframes stretch {
+    from { width: 0%; }
+    to { width: 80%; }
+}
+
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* --- NAVIGATION --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 10%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(5, 5, 5, 0.8);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav ul { display: flex; list-style: none; gap: 2.5rem; margin: 0; }
+nav a { 
+    color: var(--text-dim); 
+    text-decoration: none; 
+    font-weight: 500; 
+    transition: 0.3s;
+}
+nav a:hover { color: var(--primary); }
+
+/* --- HERO SECTION --- */
+header {
+    min-height: 100vh; /* Changed to min-height for image space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 10%;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* New Profile Image Styles */
+.profile-container {
+    margin-bottom: 3.5rem;
+    position: relative;
+}
+
+.profile-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary);
+    padding: 5px; /* Creates a gap between border and image */
+    background: var(--bg-deep);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+    animation: float 4s ease-in-out infinite; /* Floating effect */
+    transition: 0.5s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px rgba(139, 92, 246, 0.6);
+    border-color: var(--secondary);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.highlight {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); margin: 0.5rem 0 1rem; }
+header p { color: var(--text-dim); font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
+
+.btn {
+    display: inline-block;
+    margin-top: 2.5rem;
+    padding: 1rem 2.5rem;
+    background: var(--gradient);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.5);
+}
+
+/* --- PROJECTS --- */
+#projects { padding: 6rem 10%; }
+h2 { font-size: 2.5rem; margin-bottom: 3rem; text-align: center; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.card {
+    background: var(--bg-surface);
+    padding: 2.5rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: default;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    border-color: var(--primary);
+    background: rgba(139, 92, 246, 0.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.card h3 { margin-top: 0; color: var(--secondary); }
+.card p { color: var(--text-dim); font-size: 0.95rem; }
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 6rem 10%;
+    background: #000;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.socials { margin-top: 1.5rem; }
+.socials a {
+    color: var(--secondary);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.socials a:hover { color: var(--primary); }
+/* Integrated Theme Switcher in Nav */
+.theme-switcher-item {
+    display: flex;
+    align-items: center;
+    margin-left: 10px; /* Space after 'Contact' */
+    padding-left: 20px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider */
+}
+
+.theme-inline-menu {
+    display: flex;
+    gap: 10px;
+}
+
+.theme-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.theme-dot:hover {
+    transform: scale(1.3);
+    border-color: #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Ensure Nav handles the new item on mobile */
+@media (max-width: 600px) {
+    nav ul { gap: 1rem; }
+    .theme-switcher-item { border-left: none; padding-left: 0; }
+}
+/* The Glowing Light */
+.cursor-glow {
+    width: 300px;
+    height: 300px;
+    background: var(--primary);
+    filter: blur(80px);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none; /* Crucial: allows you to click through the light */
+    opacity: 0.15; /* Keeps it subtle */
+    z-index: 1; /* Sits behind text but above background */
+    transition: background 0.5s ease; /* Changes color smoothly when theme changes */
+    transform: translate(-50%, -50%); /* Centers the glow on the cursor */
+    left: -500px; /* Hidden initially */
+    top: -500px;
+}
+
+/* Ensure sections have relative positioning so the glow stays behind text */
+header, section, nav {
+    position: relative;
+    z-index: 2;
+}
+.about-section {
+    padding: 8rem 10%;
+    background: rgba(255, 255, 255, 0.02); /* Slight contrast from main bg */
+}
+
+.about-flex {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    flex-wrap: wrap; /* Stack on mobile */
+}
+
+.about-text { flex: 1; min-width: 300px; }
+.about-skills { flex: 1; min-width: 300px; }
+
+.sub-heading {
+    color: var(--primary);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.stats-grid {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--secondary);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+/* Scroll Reveal Initial States */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ensure smooth scrolling globally */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Sticky Nav Offset */
+#about-me, #projects, #contact {
+    scroll-margin-top: 80px;
+}
+.skill-card {
+    background: var(--bg-surface);
+    padding: 2.5rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: var(--gradient);
+}
+
+.skill-card h3 { margin-bottom: 1.5rem; }
+
+.skill-card ul { list-style: none; padding: 0; }
+.skill-card li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-dim);
+}
+
+.skill-card li span { color: var(--primary); font-weight: bold; }
+/* --- Enhanced Contact Section --- */
+#contact {
+    padding: 8rem 10%;
+    background: var(--bg-surface);
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.contact-info h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+}
+
+.info-links {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 1.1rem;
+}
+
+.info-item:hover {
+    color: var(--primary);
+}
+
+.info-item .icon {
+    width: 45px;
+    height: 45px;
+    background: var(--glass);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Social Grid */
+.social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 2rem;
+}
+
+.social-box {
+    padding: 20px;
+    background: var(--bg-deep);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.social-box:hover {
+    border-color: var(--secondary);
+    background: var(--glass);
+    transform: translateY(-5px);
+}
+
+.email-btn {
+    width: 100%;
+    text-align: center;
+}
+
+.mini-footer {
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 900px) {
+    .contact-wrapper { grid-template-columns: 1fr; }
+}
+
+/* --- Advanced Skills Lighting --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.skill-card-fancy {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 2.5rem;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+/* The "Hidden" Glow that appears on hover */
+.card-glow {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), 
+                var(--primary) 0%, 
+                transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    filter: blur(40px);
+}
+
+.skill-card-fancy:hover .card-glow {
+    opacity: 0.15;
+}
+
+.skill-card-fancy:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 1.5rem;
+}
+
+.skill-tags span {
+    background: var(--glass);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+}
+
+.skill-tags span:hover {
+    background: var(--primary);
+    color: white;
+}
+/* Container and Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    padding: 20px;
+}
+
+/* Fancy Card Base */
+.skill-card-fancy {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 24px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1;
+}
+
+/* Neon Glow Effect */
+.skill-card-fancy::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), 
+                var(--accent) 0%, 
+                transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s;
+    z-index: -1;
+}
+
+.skill-card-fancy:hover::before {
+    opacity: 0.2;
+}
+
+.skill-card-fancy:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 15px var(--accent);
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* Colorful Tags (Buttons) */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 1.5rem;
+}
+
+.tag {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+/* Each tag lights up with the card's accent color on hover */
+.skill-card-fancy:hover .tag {
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.tag:hover {
+    background: var(--accent) !important;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px var(--accent);
+}
+/* Import fonts at the top of your CSS */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Montserrat:wght@900&family=Plus+Jakarta+Sans:wght@300;400;700&display=swap');
+
+/* Typography Variables */
+:root {
+    --font-main: 'Plus Jakarta Sans', sans-serif;
+    --font-display: 'Montserrat', sans-serif;
+    --font-code: 'JetBrains Mono', monospace;
+}
+
+/* Section Header Styling */
+.glitch-font {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(3rem, 8vw, 5rem);
+    text-transform: uppercase;
+    line-height: 0.9;
+    letter-spacing: -3px;
+    margin-bottom: 40px;
+    background: linear-gradient(to bottom, #fff 50%, rgba(255,255,255,0.1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Card Titles (Frontend/Backend/Systems) */
+.display-font {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 2rem;
+    letter-spacing: -1px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.card-desc {
+    font-family: var(--font-main);
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Skill Tags (The Buttons) */
+.tag {
+    font-family: var(--font-code);
+    font-size: 0.75rem;
+    padding: 8px 14px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transition: 0.3s all;
+    text-transform: lowercase;
+}
+
+.tag::before {
+    content: '>';
+    color: var(--accent);
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+/* Card Glow Effect */
+.skill-card-fancy {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 32px;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.skill-card-fancy:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--accent);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px var(--accent);
+}
+
+.card-num {
+    font-family: var(--font-code);
+    color: var(--accent);
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+/* Projects Section Styling */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.project-card-fancy {
+    position: relative;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 24px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    transition: 0.4s ease;
+}
+
+.project-card-fancy:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+}
+
+.project-image-placeholder {
+    width: 100%;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-category {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 2px;
+}
+
+.project-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn-mini, .btn-mini-outline {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.btn-mini {
+    background: var(--accent);
+    color: #000;
+}
+
+.btn-mini-outline {
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+}
+
+.btn-mini-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
